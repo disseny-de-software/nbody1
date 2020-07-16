@@ -1,0 +1,54 @@
+@startuml
+
+class Body {
+- r : Vector
+- v : Vector
+- mass : double
++ move(f:Vector, dt:double)
++ forceFrom(b : Body) : Vector
++ draw()
++ draw(penRadius : double)
++ toString()
+}
+
+class Universe {
++ n : int
++ Universe(fname : String)
++ increaseTime(dt : double)
++ draw()
++ {static} main(args : String[])
+}
+
+class UniverseTrace {
++ n : int
++ Universe(fname : String)
++ increaseTime(dt : double)
++ draw()
++ {static} main(args : String[])
+}
+
+Universe *-> "1..*" Body : bodies
+UniverseTrace *-down-> "1..*" Body : bodies
+
+note left of Universe
+while (true) {
+    StdDraw.clear();
+    newton.increaseTime(dt);
+    newton.draw();
+    StdDraw.show();
+    StdDraw.pause(10);
+}
+end note
+
+note right of UniverseTrace
+while (true) {
+    StdDraw.setPenColor(StdDraw.WHITE);
+    newton.draw();
+    newton.increaseTime(dt);
+    StdDraw.setPenColor(StdDraw.BLACK);
+    newton.draw();
+    StdDraw.show();
+    StdDraw.pause(10);
+}
+end note
+@enduml
