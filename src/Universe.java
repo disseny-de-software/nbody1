@@ -93,7 +93,7 @@ public class Universe {
 
 
     // client to simulate a universe
-    // In IntelliJ : Run -> Run... -> Edit configurations -> Program arguments 10000 data/3body.txt
+    // In IntelliJ : Run -> Run... -> Edit configurations -> Program arguments 1000 data/3body.txt
     public static void main(String[] args) {
         Universe newton;
         double dt = Double.parseDouble(args[0]);
@@ -101,12 +101,13 @@ public class Universe {
         String fname = args[1];
         newton = new Universe(fname);
         StdDraw.enableDoubleBuffering();
+        int pause = 0;
         while (true) {
             StdDraw.clear();
             newton.increaseTime(dt);
             newton.draw();
             StdDraw.show();
-            StdDraw.pause(10);
+            StdDraw.pause(pause);
         }
     }
 }
