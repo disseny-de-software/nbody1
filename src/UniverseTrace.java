@@ -102,6 +102,7 @@ public class UniverseTrace {
         UniverseTrace newton = new UniverseTrace(fname);
         StdDraw.clear(StdDraw.GRAY);
         StdDraw.enableDoubleBuffering();
+        final int  X =32;
 
         while (true) {
             StdDraw.setPenColor(StdDraw.WHITE);
