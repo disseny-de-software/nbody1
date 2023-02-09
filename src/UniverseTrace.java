@@ -98,8 +98,8 @@ public class UniverseTrace {
         System.out.println("dt=" + dt);
         String fname = args[1];
 
-        UniverseTrace newton = new UniverseTrace(fname);
         StdDraw.setCanvasSize(600, 600);
+        UniverseTrace newton = new UniverseTrace(fname);
         StdDraw.clear(StdDraw.GRAY);
         StdDraw.enableDoubleBuffering();
         while (true) {
