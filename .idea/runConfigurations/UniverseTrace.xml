@@ -2,7 +2,7 @@
   <configuration default="false" name="UniverseTrace" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="UniverseTrace" />
     <module name="nbody1" />
-    <option name="PROGRAM_PARAMETERS" value="25000 data/3body.txt" />
+    <option name="PROGRAM_PARAMETERS" value="10000 data/3body.txt" />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>
